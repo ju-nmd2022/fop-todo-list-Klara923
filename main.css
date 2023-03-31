@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+
+body {
+  font-family: "Rubik";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    -45deg,
+    #10002b,
+    #240046,
+    #3c096c,
+    #5a189a,
+    #7b2cbf,
+    #9d4edd,
+    #c77dff,
+    #e0aaff
+  );
+  background-size: 1000% 1000%;
+  animation: gradient 30s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+#headerDiv {
+  margin-top: 100px;
+}
+h1 {
+  text-align: center;
+}
+h2 {
+  text-align: center;
+}
+#inputDiv {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+#inputElement {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  border: none;
+  width: 30%;
+  height: 30px;
+  outline: none;
+  padding-left: 1%;
+}
+#inputElement:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: 2s;
+  outline: none;
+  padding-left: 1%;
+}
+#inputElement:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: 2s;
+  outline: none;
+  padding-left: 1%;
+}
+input,
+select,
+textarea {
+  font-family: "Rubik";
+  font-size: medium;
+  color: white;
+}
+#addButton {
+  width: 50px;
+  border: none;
+  background-color: transparent;
+}
+.fa-plus {
+  font-size: x-large;
+  color: rgba(255, 255, 255, 0.5);
+}
+.fa-plus:hover {
+  color: rgba(255, 255, 255, 0.9);
+  transition: 2s;
+}
+.fa-plus:focus {
+  color: rgba(255, 255, 255, 0.9);
+  transition: 2s;
+}
+
+#toDoItemsListDiv {
+  margin-top: 50px;
+}
+
+.toDoItem {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  height: 40px;
+  list-style-type: none;
+  color: white;
+  font-family: "Rubik";
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  width: 50%;
+}
