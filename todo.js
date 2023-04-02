@@ -8,31 +8,37 @@ function add() {
   if (inputElement.value.trim() === "") {
     alert("Add something to the list!");
   } else {
-    let toDoItem = document.createElement("li");
+    const toDoItem = document.createElement("li");
     toDoItem.setAttribute("class", "toDoItem");
     toDoItem.innerHTML = inputElement.value;
 
-    let thrashIconElement = document.createElement("i");
+    const checkIconElement = document.createElement("i");
+    checkIconElement.classList.add("far", "fa-circle-check");
+    toDoItem.appendChild(checkIconElement);
+    checkIconElement.addEventListener("click", checkedToDoItem);
+
+    const thrashIconElement = document.createElement("i");
     thrashIconElement.classList.add("fas", "fa-trash");
     thrashIconElement.addEventListener("click", removeToDoItem);
     toDoItem.appendChild(thrashIconElement);
-
-    let checkIconElement = document.createElement("i");
-    checkIconElement.classList.add("fas", "fa-check");
-    toDoItem.appendChild(checkIconElement);
-    checkIconElement.addEventListener("click", checkedToDoItem);
 
     toDoItemsListElement.appendChild(toDoItem);
     inputElement.value = "";
   }
 }
 
+// This solution was creatted with help from chatGPT
+
 function removeToDoItem(event) {
   let toDoItem = event.target.parentNode;
   toDoItem.remove();
   console.log("balablablab");
 }
-function checkedToDoItem() {
+// The toggle() method toggles between hide() and show()
+function checkedToDoItem(event) {
   let toDoItem = event.target.parentNode;
-  toDoItem.style.color = "red";
+  toDoItem.classList.toggle("checked");
+  let checkIconElement = toDoItem.querySelector(".fa-circle-check");
+  checkIconElement.classList.toggle("far");
+  checkIconElement.classList.toggle("fas");
 }
